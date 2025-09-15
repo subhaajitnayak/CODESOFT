@@ -189,18 +189,18 @@
                     <label for="clintphone" class="form-lable" >Phone</label>
                     <input type="phone" class="form-control" id="clintphone">
                 </div>
-                <div class="cc-1">
-                    <label for="clintaddress" class="form-lable">Address</label>
-                    <input type="address" class="form-control" id="clintaddress">
-                </div>
+                <form action="submit_comment" method="post">
+                    <label for="comment">Address</label><br>
+                    <textarea name="useraddress" id="comment" rows="3" cols="10" placeholder="address..."></textarea>
+                </form>
                 <div class="cb-1">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label for="exampleCheck1" class="form-check-label">I want you to work an a project with me</label>
                 </div>
-                <div class="cc-1">
-                    <label for="clientenquirie" class="form-lable">Comment/Enquirie's</label>
-                    <input type="text" class="form-control" id="clintname">
-                </div>
+                <form action="submit_comment" method="post">
+                    <label for="comment">Comment/inquary</label><br>
+                    <textarea name="useraddress" id="comment" rows="3" cols="10" placeholder="comments..."></textarea>
+                </form>
                 <div class="buttons">
                     <button type="submit" class="btn btn-sm">Submit</button>
                 </div>
