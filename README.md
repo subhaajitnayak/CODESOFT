@@ -1,16 +1,16 @@
 # CODESOFT
 
 #Profile
-@branch: secondary
+-branch: secondary
 
 #Landing Page
-@branch: secondary-2
+-branch: secondary-2
 
 #Calculator
-@branch: secondary-3
+-branch: secondary-3
 
 #Job Bord
-@branch:master
+-branch:master
 
 #Quiz Bord
-@branch:master-2
+-branch:master-2
