@@ -6,6 +6,7 @@
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -26,11 +27,11 @@
     <div class="container">
         <div class="left_cont">
             <div class="cont">
-                <p>Hi! 'am <br><span>Subhajit Nayak</span></p>
+        <p>Hi! I'm <br><span>Subhajit Nayak</span></p>
         <p>Web Developer</p>
         <p>I am a passionate Web Developer</p>
-        <p>specilizing intranslating design consepts into semless <br>
-            and interactive web expriences using HTML, CSS ,and JavaScript.</p>
+        <p>specializing in translating design concepts into seamless <br>
+            and interactive web experiences using HTML, CSS, and JavaScript.</p>
             </div>
             <div class="links">
                 <a href="#"><i class="fa-brands fa-github"></i></a>
@@ -40,8 +41,8 @@
                 <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
             </div>
             <div class="button">
-                <button class="btn">Hire me</button>
-                <button class="btn">Downlode CV</button>
+                <button class="btn" id="hireMeBtn">Hire me</button>
+                <button class="btn" id="downloadCvBtn">Download CV</button>
             </div>
         
     </div>
@@ -176,34 +177,32 @@
                 <h2>Conatct me for a work & General Enquiries</h2>
             </div>
             <div class="form">
-                <div class="cc-1">
-                    <label for="clintname" class="form-lable">Name</label>
-                    <input type="text" class="form-lable" id="clintname">
-                </div>
-                <div class="cc-1">
-                    <label for="clintmail" class="form-lable">Email address</label>
-                    <input type="email" class="form-control" id="clintemail">
-                    <div class="form-text" id="emailhelp">We'll never share your email & phone with anyone else.</div>
-                </div>
-                <div class="cc-1">
-                    <label for="clintphone" class="form-lable" >Phone</label>
-                    <input type="phone" class="form-control" id="clintphone">
-                </div>
-                <form action="submit_comment" method="post">
-                    <label for="comment">Address</label><br>
-                    <textarea name="useraddress" id="comment" rows="3" cols="10" placeholder="address..."></textarea>
+                <form action="submit_comment" method="post" id="contactForm">
+                    <div class="cc-1">
+                        <label for="clientName" class="form-label">Name</label>
+                        <input type="text" class="form-label" id="clientName" name="clientName" required>
+                    </div>
+                    <div class="cc-1">
+                        <label for="clientEmail" class="form-label">Email address</label>
+                        <input type="email" class="form-control" id="clientEmail" name="clientEmail" required>
+                        <div class="form-text" id="emailHelp">We'll never share your email & phone with anyone else.</div>
+                    </div>
+                    <div class="cc-1">
+                        <label for="clientPhone" class="form-label">Phone</label>
+                        <input type="tel" class="form-control" id="clientPhone" name="clientPhone" required>
+                    </div>
+                    <label for="clientAddress">Address</label><br>
+                    <textarea name="clientAddress" id="clientAddress" rows="3" cols="10" placeholder="address..." required></textarea>
+                    <div class="cb-1">
+                        <input type="checkbox" class="form-check-input" id="projectCheck" name="projectCheck">
+                        <label for="projectCheck" class="form-check-label">I want you to work on a project with me</label>
+                    </div>
+                    <label for="clientComments">Comment/Enquiries</label><br>
+                    <textarea name="clientComments" id="clientComments" rows="3" cols="10" placeholder="comments..." required></textarea>
+                    <div class="buttons">
+                        <button type="submit" class="btn btn-sm">Submit</button>
+                    </div>
                 </form>
-                <div class="cb-1">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label for="exampleCheck1" class="form-check-label">I want you to work an a project with me</label>
-                </div>
-                <form action="submit_comment" method="post">
-                    <label for="comment">Comment/inquary</label><br>
-                    <textarea name="useraddress" id="comment" rows="3" cols="10" placeholder="comments..."></textarea>
-                </form>
-                <div class="buttons">
-                    <button type="submit" class="btn btn-sm">Submit</button>
-                </div>
             </div>
             </div>
             <div class="poster">
