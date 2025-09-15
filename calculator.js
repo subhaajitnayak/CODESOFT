@@ -1,36 +1,43 @@
-// let string = "";
-// let buttons = document.querySelectorAll('.btn')
+const display = document.querySelector('#display');
+const buttons = document.querySelectorAll('.btn');
 
-// Array.from(buttons).forEach((btn) => {
-//     document.addEventListener('click', (e) => {
-//         // if(e.target.innerHTML == '='){
-//         //     string = eval(strind);
-//         //     document.querySelector('input').value = string;
-//         // } else if(e.target.innerHTML == 'CL'){
-//         //     string = "";
-//         //     document.querySelector('input').value = string;
-//         // } else {
-//             console.log(e.target);
-//             string = string + e.target.innerHTML;
-//             document.querySelector('input').value = string;
-//     })
-// })
+let expression = "";
+let memory = 0;
 
-let string = "";
-let buttons = document.querySelectorAll('.btn');
+buttons.forEach((button) => {
+    button.addEventListener('click', (e) => {
+        const value = e.target.innerHTML;
 
-Array.from(buttons).forEach((btn) => {
-    btn.addEventListener('click',(e)=>{
-        if(e.target.innerHTML == "="){
-            string = eval(string);
-            document.querySelector('input').value = string;
-        } else if(e.target.innerHTML == "CL"){
-            string = "";
-            document.querySelector('input').value = string;
+        if (value === '=') {
+            if (!expression) {
+                return;
+            }
+            try {
+                
+                const result = new Function('return ' + expression)();
+                expression = String(result);
+                display.value = expression;
+            } catch (error) {
+                display.value = 'Error';
+                expression = '';
+            }
+        } else if (value === 'CL') {
+            expression = '';
+            display.value = expression;
+        } else if (value === 'M+') {
+            // Add current display value to memory
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                memory += currentValue;
+                console.log(`Memory updated: ${memory}`);
+            }
+        } else if (value === '%') {
+            // Append modulo operator to expression
+            expression += '%';
+            display.value = expression;
         } else {
-            console.log(e.target)
-            string = string + e.target.innerHTML;
-            document.querySelector('input').value = string;
+            expression += value;
+            display.value = expression;
         }
-    })
-})
+    });
+});
